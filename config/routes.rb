@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   post '/calculate' => 'site#calculate'
 
+  get '/projects' => 'projects#index'
+
 end
