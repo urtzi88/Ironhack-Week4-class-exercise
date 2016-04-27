@@ -1,9 +1,10 @@
+<%= link_to "Record a new project", "/projects/new" %>
 <ul>
 <%@projects.each do |project|%>
   <%if project.description.present?%>
-    <li><%=project.name%> - <%=project.description%></li>
+    <li><%= link_to "#{project.name}", "/projects/#{project.id}"%> - <%=project.description%></li>
   <%else%>
-    <li><%=project.name%></li>
+    <li><%= link_to "#{project.name}", "/projects/#{project.id}"%></li>
   <%end%>
 <%end%>
 </ul>
