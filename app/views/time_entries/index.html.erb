@@ -1,0 +1,9 @@
+<h1><%= @project.name %></h1>
+<ul>
+<%@time_entries.each do |entry|%>
+    <li><%=entry.hours%>hours, <%=entry.minutes%>minutes. <%=entry.comment%><br><%= entry.date %></li>
+<%end%>
+</ul>
+<%= link_to "Add Time Entry", "/projects/#{@project.id}/time_entries/new" %>
+<%= link_to "Back", "/projects/#{@project.id}" %>
+<%= link_to "Projects Index", "/projects/" %>

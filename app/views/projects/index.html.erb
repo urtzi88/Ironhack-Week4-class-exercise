@@ -2,9 +2,9 @@
 <ul>
 <%@projects.each do |project|%>
   <%if project.description.present?%>
-    <li><%= link_to "#{project.name}", "/projects/#{project.id}"%> - <%=project.description%></li>
+    <li><%= link_to "#{project.name}", "/projects/#{project.id}" %> - <%=project.description%> <%= link_to "Time Entries", "/projects/#{project.id}/time_entries" %></li>
   <%else%>
-    <li><%= link_to "#{project.name}", "/projects/#{project.id}"%></li>
+    <li><%= link_to "#{project.name}", "/projects/#{project.id}" %> <%= link_to "Time Entries", "/projects/#{project.id}/time_entries" %></li>
   <%end%>
 <%end%>
 </ul>

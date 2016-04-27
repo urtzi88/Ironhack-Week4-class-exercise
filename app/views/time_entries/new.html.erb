@@ -1,0 +1,10 @@
+<h2>Create a project</h2>
+<%= form_for [@project, @time_entry] do |f| %>
+  <%= f.text_field :hours, :placeholder => "Hours" %>
+  <%= f.text_field :minutes, :placeholder => "Minutes" %>
+  <%= f.text_field :comment, :placeholder => "Comment" %>
+  <%= f.text_field :date, :placeholder => "Date" %>
+  <%= f.submit 'Save' %>
+<% end %>
+<%= link_to "Project", "/projects/#{@project.id}" %>
+<%= link_to "Time Entries", "/projects/#{@project.id}/time_entries" %>
