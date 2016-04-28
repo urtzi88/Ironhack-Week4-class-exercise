@@ -12,13 +12,17 @@ class TimeEntriesController < ApplicationController
 
   def create
     @project = Project.find(params[:project_id])
-    @project.time_entries.create(
+    @time_entry = @project.time_entries.new(
       hours: params[:time_entry][:hours],
       minutes: params[:time_entry][:minutes],
       comment: params[:time_entry][:comment],
-      date: Date.parse(params[:time_entry][:date])
+      date: params[:time_entry][:date]
     )
-    redirect_to(time_entries_path)
+    if @time_entry.save
+      redirect_to(time_entries_path)
+    else
+      render "new"
+    end
   end
 
 end

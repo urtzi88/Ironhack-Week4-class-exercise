@@ -41,6 +41,7 @@ a{
     margin: 2px 0;
     border-radius: 5px;
     font-size: 0.8em;
+    border: 1px solid #27ae60;
 }
 
 a:hover{
@@ -55,6 +56,7 @@ footer{
     line-height: 30px;
     text-align: center;
     font-size: 0.9em;
+    margin-top: 30px;
 }
 
 input{
@@ -77,4 +79,15 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
     background-color: #2ecc71;
+}
+
+.validation {
+    color: #e74c3c;
+    list-style-type: disc;
+    text-align: left;
+    margin-left: 60px;
+}
+
+.field_with_errors input {
+    background-color: #e74c3c;
 }
